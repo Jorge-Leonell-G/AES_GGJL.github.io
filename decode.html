@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Descifrado AES 5IV8</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="index.html" class="navbar-brand"> <h1>Bienvenido al servicio de cifrado y descifrado con AES
+          <small class="text-muted">SWyA 5IV8</small>
+        </h1></a>
+    </nav>
+
+    <div class="ml-2">
+        <form id="formulario">
+            <fieldset>
+              <legend>Le pedimos que ingrese los siguientes datos:</legend>
+              <div class="form-group">
+                <label for="formFile" class="form-label mt-4">Seleccione su archivo a descifrar</label>
+                <input class="form-control" type="file" name="archivo" id="input-archivo">
+              </div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="form-label mt-4">Clave de cifrado (espero no la haya olvidado)</label>
+                <input type="password" class="form-control" id="password" placeholder="Ingrese su clave" size="32">
+              </div>
+              <br>
+              <legend>Contenido del mensaje: </legend>
+              <div class="form-group">
+                <textarea class="form-control" id="contenido" rows="3" readonly></textarea>
+              </div>
+              <br>
+              <div class="alert alert-dismissible alert-secondary">
+                <button type="submit" class="btn btn-dark" id="descifrar" data-bs-dismiss="alert">Descifrar mensaje</button>
+              </div>
+              <br>
+              <legend>Mensaje descifrado: </legend>
+              <div class="form-group">
+                <textarea class="form-control" id="descifrado" rows="3" readonly></textarea>
+              </div>
+              <br>
+              <div class="alert alert-dismissible alert-danger">
+                <button type="reset" class="btn btn-dark" data-bs-dismiss="alert">Eliminar datos</button>
+              </div>
+            </fieldset>
+          </form>
+          </div>
+          <br><br>
+          <div class="card border-success mb-3" style="max-width: 40rem;">
+            <div class="card-body">
+              <h4 class="card-title">Sorprendente ¿no es así?</h4>
+              <p class="card-text">Si usted seleccionó su archivo e intentó ingresar una clave errónea, ya sea de forma intencional, (o por olvido), se 
+                habrá dado cuenta de que la página no arrojó ningún resultado. Pues bien, esto se debe a la funcionalidad por bloques que conforma al 
+                cifrado AES (Advanced Encryption Standard) pero si desea conocer más acerca de este tema, le invito a acceder al 
+                <a href="https://www.youtube.com/watch?v=jn4pj1SuK14">siguiente video.</a>
+                Video en el cual me apoyé para la codificación lógica en JS que le da vida a esta página.
+              </p>
+            </div>
+          </div>
+    <footer>
+      <p>Grimaldo Guadarrama Jorge Leonell 5IV8</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/descifrar.js"></script>
+</body>
+</html>

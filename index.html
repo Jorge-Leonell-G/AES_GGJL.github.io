@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Cifrado AES 5IV8</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-dark bg-dark">
+      <a href="/" class="navbar-brand"> <h1>Bienvenido al servicio de cifrado y descifrado con AES
+        <small class="text-muted">SWyA 5IV8</small>
+      </h1></a>
+  </nav>
+    <br>
+
+    <div class="ml-2">
+    <form id="formulario">
+        <fieldset>
+          <legend>Le pedimos que ingrese los siguientes datos:</legend>
+          <div class="form-group">
+            <label for="exampleTextarea" class="form-label mt-4">Mensaje a cifrar</label>
+            <textarea class="form-control" id="cadena" rows="3" placeholder="Ingrese su mensaje"></textarea>
+          </div>
+          <fieldset class="form-group">
+            <legend class="mt-4">Elija el tipo de cifrado AES en específico</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="option" id="option1" value="option1" checked="">
+                128 bits
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="option" id="option2" value="option2">
+                192 bits
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="option" id="option3" value="option3">
+                256 bits
+              </label>
+            </div>
+          </fieldset>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label mt-4">Clave de cifrado (no se olvide ella)</label>
+            <input type="password" class="form-control" id="password" placeholder="Ingrese su clave" size="32" >
+          </div>
+          <br>
+          <div class="alert alert-dismissible alert-secondary">
+            <button type="submit" class="btn btn-dark" id="cifrar" data-bs-dismiss="alert">Cifrar mensaje</button>
+          </div>
+          <br>
+          <legend>Su mensaje cifrado es el siguiente: </legend>
+          <div class="form-group">
+            <textarea class="form-control" id="cifrado" rows="3" readonly></textarea>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-6">
+              <div class="col-sm-10">Por último, dele un nombre a su archivo cifrado (opcional) :D</label>
+                <br>
+                <textarea class="form-control" id="nombretxt" rows="1" placeholder="Ingrese el nombre de su archivo"></textarea>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <div class="col-12">
+            <div class="d-grid gap-2">
+              <div class="alert alert-dismissible alert-secondary">
+                <button class="btn btn-dark" id="descargar" data-bs-dismiss="alert">Descargar archivo cifrado</button>
+              </div>
+          <br>
+          <div class="col-12">
+            <div class="d-grid gap-2">
+              <div class="alert alert-dismissible alert-danger">
+                <button type="reset" class="btn btn-dark" data-bs-dismiss="alert"> Eliminar datos</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      </div>
+
+      <br><br>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="card border-warning mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+              <h4 class="card-title">¿Necesita ayuda con el cifrado?</h4>
+              <p class="card-text">Le proporcionamos una tabla que le puede ayudar al momento de elegir 
+                el tipo de cifrado, así como de generar su clave.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="d-grid gap-2">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Número de bits</th>
+                  <th scope="col">Longitud de la clave</th>
+                  <th scope="col">Número de rondas para el cifrado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-active">
+                  <th scope="row">128</th>
+                  <td>16 caracteres</td>
+                  <td>9 repeticiones de ronda</td>
+                </tr>
+                <tr class="table-active">
+                  <th scope="row">192</th>
+                  <td>24 caracteres</td>
+                  <td>11 repeticiones de ronda</td>
+                </tr>
+                <tr class="table-active">
+                  <th scope="row">256</th>
+                  <td>32 caracteres</td>
+                  <td>13 repeticiones de ronda</td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div class="ml-2">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active">¿Desea descifrar algún archivo suyo? <a href="decode.html">Ingrese aquí</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <footer>
+      <p>Grimaldo Guadrrama Jorge Leonell 5IV8</p>
+    </footer>
+
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" ></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/aes.js"></script>
+</body>
+</html>
